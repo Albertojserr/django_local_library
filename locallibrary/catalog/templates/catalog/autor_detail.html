@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Autor: {{ autor.apellido}}, {{ autor.nombre}}</h1>
+
+  <p> {{autor.nacimiento}}-{{autor.muerte}}</p> 
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Libros</h4>
+
+    {% for libro in autor.libro_set.all %}
+    <dt><a href="{% url 'libro-detail' libro.pk %}">{{libro}}</a> ({{libro.bookinstance_set.all.count}})</dt>
+  <dd>{{libro.descripcion}}</dd>
+    
+    
+    {% endfor %}
+  </div>
+{% endblock %}

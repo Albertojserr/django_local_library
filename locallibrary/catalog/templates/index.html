@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% block title %}<title>Página Principal</title>{% endblock %}
+<h1>Biblioteca Local Principal</h1>
+
+  <p>Bienvenido a <em>LocalLibrary</em>.</p>
+
+<h2>Contenido Dinamico</h2>
+
+  <p>La biblioteca tiene los siguientes elementos:</p>
+  <ul>
+    <li><strong>Libros:</strong> {{ num_libros }}</li>
+    <li><strong>Copias:</strong> {{ num_instances }}</li>
+    <li><strong>Copias disponibles:</strong> {{ num_instances_available }}</li>
+    <li><strong>Autores:</strong> {{ num_autores }}</li>
+    <li><strong>Géneros:</strong> {{ num_generos }}</li>
+  </ul>
+  <p>Has visitado esta página {{ num_visitas }}{% if num_visitas == 1 %} vez{% else %} veces{% endif %}.</p>
+{% endblock %}
